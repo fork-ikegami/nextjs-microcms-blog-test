@@ -1,0 +1,24 @@
+//---------------------------------------------
+//  フォント指定
+//---------------------------------------------
+@font-face { font-family: "Yu Gothic M"; src: local("Yu Gothic Medium"); }
+@font-face { font-family: "Yu Gothic M"; src: local("Yu Gothic Bold"); font-weight: bold; }
+
+$font_family:  -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Helvetica, "游ゴシック体", YuGothic, "Yu Gothic M", "游ゴシック Medium", "Yu Gothic Medium", "メイリオ", Meiryo, sans-serif;
+
+//---------------------------------------------
+//  ブレイクポイント
+//---------------------------------------------
+$MQ_PC: 750.1px;
+$MQ_SP: 750px;
+$MQ_TAB: 1080px;
+
+//---------------------------------------------
+//  VW計算のベース幅
+//---------------------------------------------
+$vw_base: 750;
+
+//---------------------------------------------
+//  transition
+//---------------------------------------------
+$duration: .2s;

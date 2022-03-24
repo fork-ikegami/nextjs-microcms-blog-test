@@ -1,0 +1,14 @@
+@import '../_settings/_include';
+
+.button {
+  display: flex;
+  font-size: 2.5rem;
+  color: $c_font;
+  cursor: pointer;
+  &:focus {
+    color: $c_font;
+  }
+  @include sp {
+    font-size: 2rem;
+  }
+}

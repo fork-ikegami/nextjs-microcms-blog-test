@@ -1,0 +1,92 @@
+@import '../_settings/_include';
+
+.inner {
+  display: flex;
+  margin: auto;
+  max-width: 1240px;
+  padding: 0 20px;
+  @include tab {
+    padding: 0 15px;
+  }
+  @include sp {
+    padding: 0 15px;
+  }
+}
+
+.flexWrap {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.flexSet {
+  flex: 1 0 auto;
+}
+
+// main/aside
+@include pc {
+  .col2 {
+    display: flex;
+    justify-content: space-between;
+    .left {
+      width: calc(80% - 2em);
+    }
+    .right {
+      width: 20%;
+    }
+  }
+}
+@include tab {
+  .col2 {
+    .left {
+      width: calc(80% - 1.5em);
+    }
+  }
+}
+
+// ナビゲーション
+.nav {
+  @include sp {
+    margin-top: 5em;
+    padding-top: 1em;
+    border-top: 1px solid $c_title_bg;
+  }
+  a {
+    color: $c_link;
+  }
+  dl {
+    margin-top: 1em;
+    dt {
+      @include sp {
+        margin-bottom: .1em;
+      }
+    }
+    small {
+      font-size: 1.4rem;
+      line-height: 1.5;
+      display: block;
+      text-indent: -.6em;
+      padding-left: .8em;
+      &::before {
+        content: '- ';
+      }
+    }
+  }
+  // タグ一覧
+  .tagList {
+    font-size: 1.6rem;
+    li {
+      display: inline-block;
+      vertical-align: top;
+      margin: 0 .5em .5em 0;
+      a {
+        display: block;
+        line-height: 1.5;
+        padding: .05em .2em;
+        border: 1px solid $c_link;
+        border-radius: .5em;
+      }
+    }
+  }
+}

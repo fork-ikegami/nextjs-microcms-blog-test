@@ -1,0 +1,161 @@
+@import './_settings/_include';
+
+.title {
+  font-size: 4rem;
+  line-height: 1.4;
+  padding-bottom: .5em;
+  letter-spacing: -.05em;
+  @include sp {
+    font-size: 3.4rem;
+  }
+}
+
+.thumb {
+  border-radius: 1em;
+}
+
+.date {
+  margin-top: 1em;
+}
+
+.category {
+  color: $c_link;
+  margin-left: .8em;
+}
+
+.tagList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  line-height: 1.5;
+  margin: .1em 0 1em;
+  li:not(:first-child)::before {
+    content: "/";
+    padding: 0 .4em;
+  }
+  a {
+    color: $c_link;
+  }
+}
+
+.shareList {
+  display: flex;
+  margin-top: 5em;
+  margin-bottom: -4em;
+  li + li {
+    margin-left: .5em;
+  }
+}
+
+.post {
+  & > h1 {
+    font-size: 3rem;
+    margin: 1.5em -20px .5em;
+    background-color: $c_title_bg;
+    padding: .5em 20px;
+    border-radius: .5em;
+    @include sp {
+      font-size: 2.6rem;
+      margin-left: -15px;
+      margin-right: -15px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    span {
+      color: $c_font!important;
+    }
+  }
+
+  & > h2 {
+    font-size: 2.8rem;
+    margin: 1.5em 0 .5em;
+    border-bottom: 1px solid #ddd;
+    @include sp {
+      font-size: 2.4rem;
+    }
+  }
+
+  & > h3 {
+    font-size: 2.6rem;
+    margin: 1em 0 .5em;
+    @include sp {
+      font-size: 2.2rem;
+    }
+  }
+
+  & > h4 {
+    font-size: 2.4rem;
+    margin: 1em 0 .5em;
+    @include sp {
+      font-size: 2rem;
+    }
+  }
+
+  & > h5 {
+    font-size: 2.2rem;
+    margin: 1em 0 .5em;
+    @include sp {
+      font-size: 1.8rem;
+    }
+  }
+
+  & > p {
+    span, strong {
+      color: $c_font!important;
+    }
+
+    a {
+      color: $c_link!important;
+      border-bottom: 1px solid $c_link;
+      background-color: transparent!important;
+      // 外部リンク
+      // absoluteだと複数行対応できないので一旦消し
+      // &[target="_blank"] {
+      //   position: relative;
+      //   margin-right: 15px;
+      //   &::before,
+      //   &::after {
+      //     content: "";
+      //     position: absolute;
+      //     width: 11px;
+      //     height: 7px;
+      //   }
+      //   &::before {
+      //     right: -15px;
+      //     top: -2px;
+      //     border: 1px solid $c_link;
+      //     border-top-width: 3px;
+      //   }
+      //   &::after {
+      //     right: -12px;
+      //     top: 3px;
+      //     border-left: 1px solid $c_link;
+      //     border-bottom: 1px solid $c_link;
+      //   }
+      // }
+    }
+
+    & > img {
+      display: block;
+      margin: .5em auto;
+    }
+  }
+
+  & > ol,
+  & > ol > li {
+    list-style-type: decimal;
+    list-style-position: inside;
+  }
+
+  & > ul {
+    > li {
+      &::before {
+        content: "・";
+      }
+    }
+  }
+
+  & > iframe {
+    max-width: 100%;
+  }
+}

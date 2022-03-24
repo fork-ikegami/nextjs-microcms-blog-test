@@ -1,0 +1,25 @@
+@import '../_settings/_include';
+
+.footer {
+  font-size: 1.6rem;
+  text-align: center;
+  padding: 1em 0;
+  margin-top: 5em;
+  border-top: 1px solid $c_title_bg;
+  @include sp {
+    margin-top: 3em;
+  }
+}
+
+.button {
+  position: fixed;
+  right: 1em;
+  bottom: 1em;
+  color: $c_font;
+  cursor: pointer;
+  transition: opacity .5s;
+  svg {
+    width: 40px;
+    height: 40px;
+  }
+}

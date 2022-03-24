@@ -1,0 +1,66 @@
+@import '../_settings/_include';
+
+.list {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2em;
+  height: 2em;
+  line-height: 1;
+  border-radius: .5em;
+  background-color: $c_btn_bg;
+  transition: color $duration, background-color $duration;
+  &:hover {
+    color: $c_btn_bg;
+    background-color: $c_font;
+  }
+}
+
+// 前へ・次へ
+.arrow {
+  polyline {
+    stroke: $c_font;
+  }
+  a:hover {
+    polyline {
+      stroke: $c_btn_bg;
+    }
+  }
+}
+.arrowDouble {
+  svg {
+    &:first-child {
+      margin-right: -5px;
+    }
+    &:last-child {
+      margin-left: -5px;
+    }
+  }
+}
+
+// TODO: これlinkと共通でよくね？
+.current {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2em;
+  height: 2em;
+  line-height: 1;
+  border-radius: .5em;
+  color: $c_btn_bg;
+  background-color: $c_font;
+}
+
+.item {
+  margin-bottom: .5em;
+  & +.item {
+    margin-left: .5em;
+  }
+}

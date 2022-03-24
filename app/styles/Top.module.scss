@@ -1,0 +1,18 @@
+@import './_settings/_include';
+
+// 最新記事
+.blogItem {
+  &:nth-of-type(1),
+  &:nth-of-type(2) {
+    width: 100%;
+    .blogText {
+      .title {
+        font-size: 3rem;
+        line-height: 1.4;
+        @include sp {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}

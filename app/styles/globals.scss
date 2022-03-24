@@ -1,0 +1,66 @@
+@import './_settings/_include';
+@import './_settings/_reset';
+
+:root {
+  --color-font: #3c4859;
+  --color-link: #119DA4;
+  --color-bg: #f0f3f6;
+  --color-button-bg: #fff;
+  --color-title-bg: #dbe2e9;
+}
+
+[data-theme="dark"] {
+  --color-font: #f0f3f6;
+  --color-link: #16c9d2;
+  --color-bg: #3c4859;
+  --color-button-bg: #1a1f26;
+  --color-title-bg: #516177;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.8rem;
+  line-height: 1.7;
+  color: $c_font;
+  font-family: $font_family;
+  word-break: normal;
+  word-wrap: break-word;
+  -webkit-text-size-adjust: 100%!important;
+  background-color: $c_bg;
+  transition: color $duration,
+              background-color $duration;
+  @include sp {
+    font-size: 1.6rem;
+  }
+}
+
+a {
+  color: $c_font;
+  text-decoration: none;
+  transition: color $duration;
+}
+
+.g-button {
+  text-align: center;
+  a {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 1.6rem;
+    font-weight: 700;
+    padding: .5em 1em;
+    background-color: $c_btn_bg;
+    border-radius: .5em;
+    transition: color $duration, background-color $duration;
+    &:hover {
+      color: $c_btn_bg;
+      background-color: $c_font;
+    }
+  }
+}
