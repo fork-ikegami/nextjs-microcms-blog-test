@@ -27,7 +27,12 @@ const getMicroCMSdata = async() => {
 
 const createCmsJson = async() => {
   const contents = await getMicroCMSdata();
-  const jsonData = JSON.stringify(contents, null, 2);
+
+  // 公開日時で降順ソート
+  const sortByDate = contents.sort(function(a, b) {
+    return (a.publishedAt > b.publishedAt) ? -1 : 1;
+  })
+  const jsonData = JSON.stringify(sortByDate, null, 2);
   fs.writeFileSync('data/allBlogData.json', jsonData);
 }
 

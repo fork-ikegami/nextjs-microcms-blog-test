@@ -29,11 +29,11 @@ export default function Home() {
           </li>
         ))}
       </ul>
-      {/* <div className='g-button'>
+      <div className='g-button'>
         <Link href='/blog/page/2/'>
           <a>もっと読む</a>
         </Link>
-      </div> */}
+      </div>
     </Layout>
   );
 }

@@ -11,13 +11,8 @@
 }
 
 .blogItem {
+  width: 100%;
   margin-bottom: 2em;
-  @include pc {
-    width: calc(50% - 1em);
-  }
-  @include tab {
-    width: calc(50% - .5em);
-  }
 }
 
 .blogThumb {

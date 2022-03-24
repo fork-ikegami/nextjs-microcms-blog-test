@@ -16,7 +16,7 @@ export type category = {
   updatedAt: string,
   publishedAt: string,
   revisedAt: string,
-  label: string,
+  name: string,
 }
 
 export type tag = {
@@ -25,5 +25,5 @@ export type tag = {
   updatedAt: string,
   publishedAt: string,
   revisedAt: string,
-  label: string,
+  name: string,
 }

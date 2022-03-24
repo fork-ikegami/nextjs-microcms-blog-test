@@ -43,8 +43,6 @@ export default function BlogId({ blog, highlightedBody }: {
     <Layout>
       <Head>
         <title>{blog.title} | {siteTitle}</title>
-        <meta property="og:title" content={`${blog.title} | ${siteTitle}`} />
-        <meta property="og:type" content="article" />
       </Head>
       <h1 className={styles.title}>{blog.title}</h1>
       <div className={styles.date}>
