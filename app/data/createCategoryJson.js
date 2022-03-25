@@ -25,8 +25,19 @@ const getMicroCMSdata = async() => {
   return contents;
 }
 
+const countBlogItems = (contents) => {
+  const json = fs.readFileSync('data/allBlogData.json', 'utf-8');
+  const allBlogData = JSON.parse(json);
+
+  contents.forEach((category) => {
+    const blogCount = allBlogData.filter((blog) => blog.category.id === category.id).length;
+    category.count = blogCount;
+  })
+}
+
 const createCmsJson = async() => {
   const contents = await getMicroCMSdata();
+  countBlogItems(contents);
   const jsonData = JSON.stringify(contents, null, 2);
   fs.writeFileSync('data/allCategoryData.json', jsonData);
 }

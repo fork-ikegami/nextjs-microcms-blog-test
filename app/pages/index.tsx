@@ -5,7 +5,6 @@ import { Date } from '@/components/Date';
 import Layout from '@/components/Layout';
 import { PER_PAGE } from '@/settings/index';
 import blogStyles from '@/styles/components/BlogList.module.scss';
-import styles from '@/styles/Top.module.scss';
 
 export default function Home() {
   const allData = useContext(microCMS);
@@ -16,16 +15,22 @@ export default function Home() {
     <Layout home>
       <ul className={blogStyles.blogList}>
         {allBlogData.map((blog) => (
-          <li key={blog.id} className={`${styles.blogItem} ${blogStyles.blogItem}`}>
-            <Link href={`/blog/${blog.id}`}>
-              <a>
-                <div className={blogStyles.blogText}>
+          <li key={blog.id} className={blogStyles.blogItem}>
+            <div className={blogStyles.blogText}>
+              <Link href={`/blog/${blog.id}`}>
+                <a>
                   <h1 className={blogStyles.title}>{blog.title}</h1>
-                  <Date dateString={blog.publishedAt} />
-                  <span className={blogStyles.category}>{blog.category.name}</span>
-                </div>
-              </a>
-            </Link>
+                </a>
+              </Link>
+              <div>
+                <Date dateString={blog.publishedAt} />
+                <Link href={`/category/${blog.category.id}/page/1/`}>
+                  <a>
+                    <span className={blogStyles.category}>{blog.category.name}</span>
+                  </a>
+                </Link>
+              </div>
+            </div>
           </li>
         ))}
       </ul>

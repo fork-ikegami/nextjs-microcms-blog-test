@@ -5,30 +5,28 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 2em;
-  padding: 1em 0;
-  border-bottom: 1px solid $c_title_bg;
+  padding: 10px 20px 10px 30px;
+  background-color: var(--color-header);
+  transition: background-color $duration;
   @include sp {
     margin-bottom: 1.2em;
   }
 }
 
-.title {
-  margin: 1em 0 .5em;
-  svg {
-    display: block;
-    width: 350px;
-    fill: $c_font;
-    @include sp {
-      width: 270px;
-    }
-  }
+.title,
+.link {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+}
+.link:hover {
+  color: $c_link;
+  transition: color $duration;
 }
 
-// Home
-.header.headerIsHome {
-  border-bottom: none;
-  margin-bottom: 0;
-  .title {
-    margin: 1em 0;
-  }
+.logo {
+  display: block;
+  width: 36px;
+  height: 36px;
+  margin-right: .5em;
 }

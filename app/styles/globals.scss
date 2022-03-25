@@ -2,19 +2,19 @@
 @import './_settings/_reset';
 
 :root {
-  --color-font: #3c4859;
-  --color-link: #119DA4;
-  --color-bg: #f0f3f6;
-  --color-button-bg: #fff;
+  --color-font: #3c4a60;
+  --color-link: #0a9b94;
+  --color-bg: #f7f7f7;
   --color-title-bg: #dbe2e9;
+  --color-header: #efede0;
 }
 
 [data-theme="dark"] {
-  --color-font: #f0f3f6;
-  --color-link: #16c9d2;
-  --color-bg: #3c4859;
-  --color-button-bg: #1a1f26;
+  --color-font: #eee;
+  --color-link: #0a9b94;
+  --color-bg: #354256;
   --color-title-bg: #516177;
+  --color-header: #1b222c;
 }
 
 * {
@@ -55,12 +55,12 @@ a {
     font-size: 1.6rem;
     font-weight: 700;
     padding: .5em 1em;
+    color: $c_btn_text;
     background-color: $c_btn_bg;
     border-radius: .5em;
     transition: color $duration, background-color $duration;
     &:hover {
-      color: $c_btn_bg;
-      background-color: $c_font;
+      background-color: $c_btn_hover;
     }
   }
 }

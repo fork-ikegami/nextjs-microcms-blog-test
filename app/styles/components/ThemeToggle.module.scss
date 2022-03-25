@@ -8,6 +8,10 @@
   &:focus {
     color: $c_font;
   }
+  &:hover {
+    color: $c_link;
+    transition: color $duration;
+  }
   @include sp {
     font-size: 2rem;
   }

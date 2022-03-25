@@ -11,7 +11,7 @@ export default function Layout({ children, home = false } :{
   children: Object,
   home?: boolean
 }) {
-  // カテゴリ・タグをcontextから取得
+  // contextから取得
   const allData = useContext(microCMS);
   const allCategoryData = allData.allCategoryData;
   const allTagData = allData.allTagData;
@@ -20,15 +20,18 @@ export default function Layout({ children, home = false } :{
   function createCategoryNav() {
     const items: Object[] = [];
     if(allCategoryData.length >= 1) {
-      allCategoryData.forEach((category) => (
+      allCategoryData.forEach((category) => {
         items.push(
           <li key={category.id}>
             <Link href={`/category/${category.id}/page/1/`}>
-              <a>{category.name}</a>
+              <a>
+                {category.name}
+                <span className={styles.categoryCount}>{category.count}</span>
+              </a>
             </Link>
           </li>
         )
-      ))
+      })
     }
     return items;
   };
@@ -41,7 +44,7 @@ export default function Layout({ children, home = false } :{
         items.push(
           <li key={tag.id}>
             <Link href={`/tag/${tag.id}/page/1/`}>
-              <a>{tag.name}</a>
+              <a>#{tag.name}</a>
             </Link>
           </li>
         )
@@ -56,38 +59,33 @@ export default function Layout({ children, home = false } :{
         <meta name='viewport' content='width=device-width,initial-scale=1.0,minimum-scale=1.0'/>
         <meta name="robots" content="noindex,nofollow,noarchive" />
       </Head>
-      <div className={styles.inner}>
-        <div className={styles.flexWrap}>
-          <div className={styles.flexSet}>
-            <Header home={home} />
-            <div className={styles.col2}>
-              <main className={styles.left}>{children}</main>
+      <div className={styles.flexWrap}>
+        <div className={styles.flexSet}>
+          <Header home={home} />
+          <div className={styles.col2}>
+            <main className={styles.left}>{children}</main>
 
-              <nav className={`${styles.right} ${styles.nav}`}>
-                <Link href="/">
-                  <a>トップ</a>
-                </Link>
-                <dl>
-                  <dt>カテゴリー</dt>
-                  <dd>
-                    <ul>
-                      {createCategoryNav()}
-                    </ul>
-                  </dd>
-                </dl>
-                <dl>
-                  <dt>タグ</dt>
-                  <dd>
-                    <ul className={styles.tagList}>
-                      {createTagNav()}
-                    </ul>
-                  </dd>
-                </dl>
-              </nav>
-            </div>
+            <nav className={`${styles.right} ${styles.nav}`}>
+              <dl>
+                <dt>Categories</dt>
+                <dd>
+                  <ul className={styles.categoryList}>
+                    {createCategoryNav()}
+                  </ul>
+                </dd>
+              </dl>
+              <dl>
+                <dt>Tags</dt>
+                <dd>
+                  <ul className={styles.tagList}>
+                    {createTagNav()}
+                  </ul>
+                </dd>
+              </dl>
+            </nav>
           </div>
-          <Footer />
         </div>
+        <Footer />
       </div>
     </>
   )

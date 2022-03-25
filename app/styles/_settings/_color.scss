@@ -1,8 +1,11 @@
 //---------------------------------------------
 //  色
 //---------------------------------------------
+// themeで変わるものはCSS変数化
 $c_font: var(--color-font);
 $c_link: var(--color-link);
 $c_bg: var(--color-bg);
-$c_btn_bg: var(--color-button-bg);
+$c_btn_text: #f7f7f7;
+$c_btn_bg: #0a9b94;
+$c_btn_hover: #076b66;
 $c_title_bg: var(--color-title-bg);

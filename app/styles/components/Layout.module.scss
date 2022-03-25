@@ -1,18 +1,5 @@
 @import '../_settings/_include';
 
-.inner {
-  display: flex;
-  margin: auto;
-  max-width: 1240px;
-  padding: 0 20px;
-  @include tab {
-    padding: 0 15px;
-  }
-  @include sp {
-    padding: 0 15px;
-  }
-}
-
 .flexWrap {
   display: flex;
   flex-flow: column;
@@ -25,10 +12,21 @@
 }
 
 // main/aside
+.col2 {
+  max-width: 1240px;
+  margin: auto;
+  padding: 0 20px;
+}
 @include pc {
   .col2 {
     display: flex;
     justify-content: space-between;
+    @include tab {
+      padding: 0 15px;
+    }
+    @include sp {
+      padding: 0 15px;
+    }
     .left {
       width: calc(80% - 2em);
     }
@@ -52,15 +50,11 @@
     padding-top: 1em;
     border-top: 1px solid $c_title_bg;
   }
-  a {
-    color: $c_link;
-  }
   dl {
     margin-top: 1em;
     dt {
-      @include sp {
-        margin-bottom: .1em;
-      }
+      font-weight: 700;
+      margin-bottom: .1em;
     }
     small {
       font-size: 1.4rem;
@@ -73,6 +67,35 @@
       }
     }
   }
+  // カテゴリー一覧
+  .categoryList {
+    li {
+      &+li {
+        border-top: 1px solid $c_title_bg;
+      }
+      a {
+        display: block;
+        padding: .5em .75em;
+        transition: color $duration, background-color $duration;
+        &:hover {
+          background-color: $c_title_bg;
+        }
+      }
+    }
+  }
+  .categoryCount {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: .5em;
+    padding: .25em .5em;
+    line-height: 1;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    color: #3c4a60;
+    background-color: rgb(224, 224, 224);
+  }
+
   // タグ一覧
   .tagList {
     font-size: 1.6rem;
@@ -82,6 +105,7 @@
       margin: 0 .5em .5em 0;
       a {
         display: block;
+        color: $c_link;
         line-height: 1.5;
         padding: .05em .2em;
         border: 1px solid $c_link;

@@ -18,15 +18,21 @@ export default function BlogPageId({ blogData, totalCount}: {
       <ul className={blogStyles.blogList}>
         {blogData.map(blog => (
           <li key={blog.id} className={blogStyles.blogItem}>
-            <Link href={`/blog/${blog.id}`}>
-              <a>
-                <div className={blogStyles.blogText}>
-                  <h1 className={blogStyles.title}>{blog.title}</h1>
-                  <Date dateString={blog.publishedAt} />
+            <div className={blogStyles.blogText}>
+              <Link href={`/blog/${blog.id}`}>
+                <a>
+                    <h1 className={blogStyles.title}>{blog.title}</h1>
+                </a>
+              </Link>
+              <div>
+                <Date dateString={blog.publishedAt} />
+                <Link href={`/category/${blog.category.id}/page/1/`}>
+                  <a>
                   <span className={blogStyles.category}>{blog.category.name}</span>
-                </div>
-              </a>
-            </Link>
+                  </a>
+                </Link>
+              </div>
+            </div>
           </li>
         ))}
       </ul>
