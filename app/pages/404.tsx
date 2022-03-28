@@ -4,7 +4,7 @@ export default function Custom404() {
   return (
     <Layout>
       <main className="main">
-        <p>ページがありません。</p>
+        <p>404 NOT FOUND</p>
       </main>
     </Layout>
   )

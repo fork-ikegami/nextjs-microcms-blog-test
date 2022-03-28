@@ -17,7 +17,7 @@ export type category = {
   publishedAt: string,
   revisedAt: string,
   name: string,
-  count: number,
+  count?: number,
 }
 
 export type tag = {

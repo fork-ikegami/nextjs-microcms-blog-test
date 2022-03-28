@@ -5,6 +5,7 @@
     "cms": "node ./data/createBlogJson.js && node ./data/createCategoryJson.js & node ./data/createTagJson.js",
     "dev": "next dev",
     "build": "next build",
+    "export" : "next export",
     "start": "next start",
     "lint": "next lint"
   },
