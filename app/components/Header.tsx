@@ -2,6 +2,7 @@ import Link from 'next/link';
 import styles from '@/styles/components/Header.module.scss';
 import { siteTitle } from '@/settings/index';
 import { ThemeToggle } from '@/components/ThemeToggle';
+import logo from '@/public/images/logo.png';
 
 export const Header =({ home }: { home: boolean }) => {
   return (
@@ -10,7 +11,7 @@ export const Header =({ home }: { home: boolean }) => {
         <header id="globalHeader" className={`${styles.header} ${styles.headerIsHome}`}>
           <h1 className={styles.title}>
             <img
-              src="/images/logo.png"
+              src={logo.src}
               alt=""
               className={styles.logo}
             />
@@ -23,7 +24,7 @@ export const Header =({ home }: { home: boolean }) => {
           <Link href="/">
             <a className={styles.link}>
               <img
-                src="/images/logo.png"
+                src={logo.src}
                 alt=""
                 className={styles.logo}
               />
