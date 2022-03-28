@@ -19,6 +19,7 @@ jobs:
         with:
           node-version: '16'
           cache: npm
+        working-directory: ./app
         
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
