@@ -8,6 +8,7 @@ on:
   repository_dispatch:
     types: [ update_blog ]
 
+  # ワークフロー手動実行
   workflow_dispatch:
 
 jobs:
