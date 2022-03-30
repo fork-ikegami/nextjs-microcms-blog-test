@@ -11,6 +11,9 @@ export default function Layout({ children, home = false } :{
   children: Object,
   home?: boolean
 }) {
+  // favicon パス用
+  const basePath = process.env.NODE_ENV === 'production' ? '/nextjs-microcms-blog-test' : '';
+
   // contextから取得
   const allData = useContext(microCMS);
   const allCategoryData = allData.allCategoryData;
@@ -58,7 +61,7 @@ export default function Layout({ children, home = false } :{
         <title>{siteTitle}</title>
         <meta name='viewport' content='width=device-width,initial-scale=1.0,minimum-scale=1.0'/>
         <meta name="robots" content="noindex,nofollow,noarchive" />
-        <link rel="icon" href="/images/favicon.ico"></link>
+        <link rel="icon" href={`${basePath}/images/favicon.ico`}></link>
       </Head>
       <div className={styles.flexWrap}>
         <div className={styles.flexSet}>
