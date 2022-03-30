@@ -9,7 +9,7 @@ on:
     types: [ update_blog ]
 
   # ワークフロー手動実行
-  workflow_dispatch
+  workflow_dispatch:
 
 jobs:
   build:
