@@ -58,6 +58,7 @@ export default function Layout({ children, home = false } :{
         <title>{siteTitle}</title>
         <meta name='viewport' content='width=device-width,initial-scale=1.0,minimum-scale=1.0'/>
         <meta name="robots" content="noindex,nofollow,noarchive" />
+        <link rel="icon" href="/images/favicon.ico"></link>
       </Head>
       <div className={styles.flexWrap}>
         <div className={styles.flexSet}>
