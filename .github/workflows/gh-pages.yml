@@ -4,8 +4,11 @@ on:
   push:
     branches: [ main ]
 
+  # microCMSのWebhook
   repository_dispatch:
     types: [ update_blog ]
+
+  workflow_dispatch:
 
 jobs:
   build:
